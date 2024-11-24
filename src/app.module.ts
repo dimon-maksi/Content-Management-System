@@ -6,6 +6,11 @@ import { AccessModule } from './access/access.module';
 import { ValidationModule } from './validation/validation.module';
 import { VersionModule } from './version/version.module';
 import { DatasourceModule } from './datasource/datasource.module';
+import { AccessService } from './access/access.service';
+import { ArticleService, ProductService } from './content/content.service';
+import { RoleService } from './access/role.service';
+import { RolesGuard } from './access/role.guard';
+import { PermissionsGuard } from './access/permissions.guard';
 
 @Module({
     imports: [
@@ -16,6 +21,6 @@ import { DatasourceModule } from './datasource/datasource.module';
         DatasourceModule,
     ],
     controllers: [AppController],
-    providers: [AppService],
+    providers: [AppService, AccessService, ArticleService, ProductService, RoleService, RolesGuard, PermissionsGuard],
 })
 export class AppModule {}

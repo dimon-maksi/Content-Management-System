@@ -1,8 +1,9 @@
 import { Module } from '@nestjs/common';
-import { ArrayDatasourceService } from './datasource.service.array';
+import { ArrayUserDatasourceService } from './user.datasource.service.array';
+import { ArrayArticleDatasourceService, ArrayProductDatasourceService } from './content.datasource.service.array';
 
 @Module({
-    providers: [ArrayDatasourceService],
-    exports: [ArrayDatasourceService],
+    providers: [ArrayUserDatasourceService, ArrayArticleDatasourceService, ArrayProductDatasourceService],
+    exports: [ArrayUserDatasourceService, ArrayArticleDatasourceService, ArrayProductDatasourceService],
 })
 export class DatasourceModule {}

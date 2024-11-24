@@ -1,8 +1,8 @@
 import { Module } from '@nestjs/common';
-import { ValidationService } from './validation.service';
+import { ArticleValidator, BaseContentValidator, ProductValidator } from './validation.validator';
 
 @Module({
-    providers: [ValidationService],
-    exports: [ValidationService],
+    providers: [BaseContentValidator, ArticleValidator, ProductValidator],
+    exports: [BaseContentValidator, ArticleValidator, ProductValidator]
 })
 export class ValidationModule {}

@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { IValidationService } from 'src/validation/validation.service.interface';
+import { IVersionService } from './version.service.interface';
 
 @Injectable()
-export class VersionService implements IValidationService {}
+export class VersionService implements IVersionService {}

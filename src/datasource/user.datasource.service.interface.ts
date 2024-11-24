@@ -1,6 +1,6 @@
 import { User } from 'src/public/models/user.model';
 
-export interface IDatasourceService {
+export interface IUserDatasourceService {
     getUser(userId: string): Promise<User | null>;
     getUsers(): Promise<User[]>;
     addUser(userName: string, userRole: string): Promise<User>;

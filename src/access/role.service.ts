@@ -1,15 +1,11 @@
 import { Injectable } from '@nestjs/common';
 import { IRoleService } from './role.service.interface';
 import { Role } from './access.model';
-import { ArrayDatasourceService } from 'src/datasource/datasource.service.array';
+import { ArrayUserDatasourceService } from 'src/datasource/user.datasource.service.array';
 
 @Injectable()
 export class RoleService implements IRoleService {
-    private datasource = new ArrayDatasourceService();
-
-    async assignRole(userId: string, role: Role): Promise<void> {
-        this.datasource.updateUser(userId, { role: role });
-    }
+    private datasource = new ArrayUserDatasourceService();
 
     async getUserRole(userId: string): Promise<Role | null> {
         const user = await this.datasource.getUser(userId);

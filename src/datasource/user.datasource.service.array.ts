@@ -1,10 +1,14 @@
 import { Injectable } from '@nestjs/common';
-import { IDatasourceService } from './datasource.service.interface';
+import { IUserDatasourceService } from './user.datasource.service.interface';
 import { User } from 'src/public/models/user.model';
 
 @Injectable()
-export class ArrayDatasourceService implements IDatasourceService {
-    private users: User[] = [];
+export class ArrayUserDatasourceService implements IUserDatasourceService {
+    private users: User[] = [
+        { id: '1', name: 'adminUser', role: 'admin' },
+        { id: '2', name: 'editorUser', role: 'editor' },
+        { id: '3', name: 'viewerUser', role: 'viewer' },
+    ];
 
     async getUser(userId: string): Promise<User | null> {
         const user = this.users.find(user => user.id === userId);

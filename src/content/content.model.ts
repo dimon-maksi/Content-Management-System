@@ -8,7 +8,7 @@ export interface Article extends BaseContent {
 
 export interface Product extends BaseContent {
     name: string;
-    description?: string;
+    description: string;
     price: number;
     stock: number;
 }
