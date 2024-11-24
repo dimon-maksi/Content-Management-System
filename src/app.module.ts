@@ -13,14 +13,22 @@ import { RolesGuard } from './access/role.guard';
 import { PermissionsGuard } from './access/permissions.guard';
 
 @Module({
-    imports: [
-        ContentModule,
-        AccessModule,
-        ValidationModule,
-        VersionModule,
-        DatasourceModule,
-    ],
-    controllers: [AppController],
-    providers: [AppService, AccessService, ArticleService, ProductService, RoleService, RolesGuard, PermissionsGuard],
+	imports: [
+		ContentModule,
+		AccessModule,
+		ValidationModule,
+		VersionModule,
+		DatasourceModule,
+	],
+	controllers: [AppController],
+	providers: [
+		AppService,
+		AccessService,
+		ArticleService,
+		ProductService,
+		RoleService,
+		RolesGuard,
+		PermissionsGuard,
+	],
 })
 export class AppModule {}
