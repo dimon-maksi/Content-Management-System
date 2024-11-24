@@ -11,6 +11,7 @@ import { ArticleService, ProductService } from './content/content.service';
 import { RoleService } from './access/role.service';
 import { RolesGuard } from './access/role.guard';
 import { PermissionsGuard } from './access/permissions.guard';
+import { VersionService } from './version/version.service';
 
 @Module({
 	imports: [
@@ -29,6 +30,7 @@ import { PermissionsGuard } from './access/permissions.guard';
 		RoleService,
 		RolesGuard,
 		PermissionsGuard,
+		VersionService
 	],
 })
-export class AppModule {}
+export class AppModule { }
